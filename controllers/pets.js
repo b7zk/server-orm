@@ -13,8 +13,11 @@ const petPut = (req, res = response) => {
 };
 
 const petPost = (req, res = response) => {
+  const { nombre } = req.body;
+
   res.json({
     msg: "post API - controller",
+    nombre,
   });
 };
 

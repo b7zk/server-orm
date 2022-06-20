@@ -6,7 +6,7 @@ class Server {
     this.app = express();
     this.port = process.env.PORT;
 
-    //rutas
+    //*endpoints
     this.petsPath = "/pets";
 
     //*middlewares
@@ -17,9 +17,11 @@ class Server {
   }
 
   middlewares() {
-    this.app.use(cors());
+    this.app.use(cors()); //*cors
 
-    this.app.use(express.static("public")); //directorio publico
+    this.app.use(express.json()); //*Read and Parse (body)
+
+    this.app.use(express.static("public")); //*directorio publico
   }
 
   routes() {
